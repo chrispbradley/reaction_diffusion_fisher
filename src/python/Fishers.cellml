@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<model cmeta:id="fishers" name="fishers" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
+    <units name="millisecond">
+        <unit prefix="milli" units="second"/>
+    </units>
+    <component name="main">
+        <variable initial_value="1.0" name="a" units="millisecond"/>
+        <variable initial_value="-1.0" name="b" units="dimensionless"/>
+        <variable initial_value="1.0" name="c" units="dimensionless"/>
+        <variable name="time" units="millisecond"/>
+        <variable initial_value="1.0" name="u" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>time</ci>
+                    </bvar>
+                    <ci>u</ci>
+                </apply>
+                <apply>
+                    <divide/>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <times/>
+                            <apply>
+                                <minus/>
+                                <ci>b</ci>
+                            </apply>
+                            <ci>u</ci>
+                        </apply>
+                        <apply>
+                            <times/>
+                            <ci>c</ci>
+                            <ci>u</ci>
+                            <ci>u</ci>
+                        </apply>
+                    </apply>
+                    <ci>a</ci>
+                </apply>
+            </apply>
+        </math>
+    </component>
+</model>
